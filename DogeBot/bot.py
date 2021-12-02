@@ -347,10 +347,11 @@ async def meme(ctx):
     memePoster = memeData['author']
     memeSub = memeData['subreddit']
     memeLink = memeData['postLink']
+    memeUps = memeData['ups']
 
-    embed = discord.Embed(title=memeName)
+    embed = discord.Embed(title=memeName,url=memeLink)
     embed.set_image(url=memeUrl)
-    embed.set_footer(text=f'Meme by: {memePoster} | Subreddit: {memeSub} | Post: {memeLink}')
+    embed.set_footer(text=f'Meme by: {memePoster} | Subreddit: {memeSub} | 👍 {memeUps}')
     await ctx.send(embed=embed)
 
 
